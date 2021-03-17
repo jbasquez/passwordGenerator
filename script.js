@@ -14,41 +14,48 @@ const randomFunc = {
     symbol: getRandomSymbols
 };
 
-generate.addEventListener('click', () => {
-    const length = +lengthEl.value;
-    const hasLower = lowercaseEl.checked;
-    const hasUpper = uppercaseEl.checked;
-    const hasNumber = numbersEl.checked;
-    const hasSymbol = symbolsEl.checked;
+generateEl.addEventListener('click', () => {
+    console.log("ive been clicked");
+    if(lowercaseEl.checked && uppercaseEl.checked && symbolsEl.checked&& numbersEl.checked=== true) {
+        console.log("has all")
+
+    }else if(uppercaseEl.checked && symbolsEl.checked && numbersEl.checked=== true ){
+        console.log("has3")
+    }
+
+    // const length = lengthEl.value;
+    // const hasLower = lowercaseEl.checked;
+    // const hasUpper = uppercaseEl.checked;
+    // const hasNumber = numbersEl.checked;
+    // const hasSymbol = symbolsEl.checked;
     
-    resultEl.innerText = generatePassword(
-        hasLower,
-        hasUpper,
-        hasNumber,
-        hasSymbol,
-        length
-    );
+    // resultEl.innerText = generatePassword(
+    //     hasLower,
+    //     hasUpper,
+    //     hasNumber,
+    //     hasSymbol,
+    //     length
+    // );
 });
 
-//function generatePassword(lower, upper, number, symbol, length) {
+function generatePassword(lower, upper, number, symbol, length) {
     
-   // let generatedPassword = '';
+   let generatedPassword = '';
     
-    //const typesCount = lower + upper + number + symbols;
+    const typesCount = lower + upper + number + symbols;
     
-   // const typesArr = [{lower}, {upper}, {number}, {symbol}].filter
-        (
-        item => Object.values(item)[0]
-        );
+   const typesArr = [{lower}, {upper}, {number}, {symbol}].filter
+       (
+       item => Object.values(item)[0]
+       );
     
-   // if(typesCount === 0) {
-        return '';
-   // }
+   if(typesCount === 0) {
+       return '';
+   }
   
-//	}
-    //const finalPassword = generatedPassword.slice(0, length);
-    return finalPassword;
-//}
+    const finalPassword = generatedPassword.slice(0, length);
+   return finalPassword;
+};
 
 
 function getRandomUpper() {
