@@ -17,7 +17,15 @@ const randomFunc = {
 generateEl.addEventListener('click', () => {
     console.log("ive been clicked");
     if(lowercaseEl.checked && uppercaseEl.checked && symbolsEl.checked&& numbersEl.checked === true) {
-        console.log("has all")
+        console.log("has all");
+        for(var i = 0; i <lengthEl; i++){
+            var array = [];
+            array.push(lowercaseEl);
+            array.push(uppercaseEl);
+            array.push(symbolsEl);
+            array.push(numbersEl);
+            console.log(array);
+        };
     }else if(uppercaseEl.checked && symbolsEl.checked && numbersEl.checked === true ){
         console.log("has3")
     }else if(uppercaseEl.checked && numbersEl.checked && lowercaseEl.checked === true ){
