@@ -33,9 +33,17 @@ generateEl.addEventListener('click', () => {
     }else if(uppercaseEl.checked && lowercaseEl.checked === true ){
         console.log("has2")
     }else if(lowercaseEl.checked && symbolsEl.checked === true ){
-        console.log("has3")
+        console.log("has2")
     }else if(lowercaseEl.checked && numbersEl.checked=== true ){
-        console.log("has3")
+        console.log("has2")
+    }else if(lowercaseEl.checked === true ){
+        console.log("has1")
+    }else if(uppercaseEl.checked === true ){
+        console.log("has1")
+    }else if(numbersEl.checked === true ){
+        console.log("has1")
+    }else if(symbolsEl.checked === true ){
+        console.log("has1")
     }
 
     // const length = lengthEl.value;
