@@ -39,13 +39,6 @@ generateEl.addEventListener('click', () => {
         settings = specCharacter.concat(numbers, alpha, upperLetter);
         console.log(settings[0]);
         console.log(settings[1]);
-        for(var i = 0; i >= 8; i++){
-            console.log("testing");
-            var pass;
-            pass += settings[i];
-            console.log(pass); 
-            console.log("helooooo");
-        };
     }else if(uppercaseEl.checked && symbolsEl.checked && numbersEl.checked === true ){
         settings = specCharacter.concat(numbers,upperLetter);
         console.log(settings);
@@ -93,6 +86,14 @@ generateEl.addEventListener('click', () => {
         alert("please select a input");
         //event.preventDefault();
     }
+    for(var i = 0; i < 8; i++){
+        console.log("testing");
+        var pass;
+        pass += settings[i];
+        console.log(pass); 
+        console.log("helooooo");
+    };
+    console.log("are we getting here?1")
     //for loop to take user input loop through "i" as long as length and push the final password into a array
     // const length = lengthEl.value;
     // const hasLower = lowercaseEl.checked;
