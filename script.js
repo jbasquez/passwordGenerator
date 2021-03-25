@@ -36,18 +36,16 @@ generateEl.addEventListener('click', () => {
 
     if(lowercaseEl.checked && uppercaseEl.checked && symbolsEl.checked&& numbersEl.checked === true) {
         console.log("has all");
-        settings = specCharacter.concat(numbers, alpha, upperLetter, specCharacter);
-
-        console.log(settings);
-        //
-        // for(var i = 0; i <lengthEl; i++){
-        //     var array = [];
-        //     array.push(lowercaseEl);
-        //     array.push(uppercaseEl);
-        //     array.push(symbolsEl);
-        //     array.push(numbersEl);
-        //     console.log(array);
-        // };
+        settings = specCharacter.concat(numbers, alpha, upperLetter);
+        console.log(settings[0]);
+        console.log(settings[1]);
+        for(var i = 0; i >= 8; i++){
+            console.log("testing");
+            var pass;
+            pass += settings[i];
+            console.log(pass); 
+            console.log("helooooo");
+        };
     }else if(uppercaseEl.checked && symbolsEl.checked && numbersEl.checked === true ){
         settings = specCharacter.concat(numbers,upperLetter);
         console.log(settings);
