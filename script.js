@@ -87,13 +87,12 @@ generateEl.addEventListener('click', () => {
         //event.preventDefault();
     }
     for(var i = 0; i < 8; i++){
-        console.log("testing");
         var pass;
         pass += settings[i];
         console.log(pass); 
         console.log("helooooo");
     };
-    console.log("are we getting here?1")
+    console.log(pass);
     //for loop to take user input loop through "i" as long as length and push the final password into a array
     // const length = lengthEl.value;
     // const hasLower = lowercaseEl.checked;
