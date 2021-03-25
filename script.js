@@ -33,7 +33,6 @@ generateEl.addEventListener('click', () => {
         return x.toUpperCase();
     }
     upperLetter = alpha.map(toUpper);
-    console.log(upperLetter);
 
     if(lowercaseEl.checked && uppercaseEl.checked && symbolsEl.checked&& numbersEl.checked === true) {
         console.log("has all");
@@ -50,10 +49,11 @@ generateEl.addEventListener('click', () => {
         //     console.log(array);
         // };
     }else if(uppercaseEl.checked && symbolsEl.checked && numbersEl.checked === true ){
-        console.log("has3");
-        settings = specCharacter.concat(numbers, specCharacter, upperLetter);
+        settings = specCharacter.concat(numbers,upperLetter);
+        console.log(settings);
     }else if(uppercaseEl.checked && numbersEl.checked && lowercaseEl.checked === true ){
-        console.log("has3")
+        settings = alpha.concat(numbers, upperLetter);
+        console.log("has3");
         settings = specCharacter.concat(numbers, alpha, upperLetter);
     }else if(uppercaseEl.checked && symbolsEl.checked && lowercaseEl.checked === true ){
         console.log("has3")
@@ -71,8 +71,7 @@ generateEl.addEventListener('click', () => {
         console.log("has2")
     }else if(numbersEl.checked && symbolsEl.checked=== true ){
         console.log("has2")
-    }
-    else if(lowercaseEl.checked === true ){
+    }else if(lowercaseEl.checked === true ){
         console.log("has1")
     }else if(uppercaseEl.checked === true ){
         console.log("has1")
