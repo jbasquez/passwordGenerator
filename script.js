@@ -82,11 +82,14 @@ generateEl.addEventListener('click', () => {
         settings = alpha;
         console.log(settings);
     }else if(uppercaseEl.checked === true ){
-        console.log("has1")
+        settings = upperLetter;
+        console.log(settings);
     }else if(numbersEl.checked === true ){
-        console.log("has1")
+        settings = numbers;
+        console.log(settings);
     }else if(symbolsEl.checked === true ){
-        console.log("has1")
+        settings = specCharacter;
+        console.log(settings);
     }else{
         console.log("needs a value");
         alert("please select a input");
