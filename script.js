@@ -16,16 +16,38 @@ const randomFunc = {
 
 generateEl.addEventListener('click', () => {
     console.log("ive been clicked");
+    //
+    var settings;
+
+    specCharacter = [
+        "!", "@", "#", "$", "%", "^", "&", "*", "'", "(", ")", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "[", "\\", "]", "_",  "`",  "{", "|", "}",  "~",
+      ];
+    numbers = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    ];
+    alpha = [
+        "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+      ];
+    
+    var toUpper = function(x){
+        return x.toUpperCase();
+    }
+    upperLetter = alpha.map(toUpper);
+    console.log(upperLetter);
+
     if(lowercaseEl.checked && uppercaseEl.checked && symbolsEl.checked&& numbersEl.checked === true) {
         console.log("has all");
-        for(var i = 0; i <lengthEl; i++){
-            var array = [];
-            array.push(lowercaseEl);
-            array.push(uppercaseEl);
-            array.push(symbolsEl);
-            array.push(numbersEl);
-            console.log(array);
-        };
+        settings = specCharacter.concat(numbers, alpha, upperLetter);
+        console.log(settings);
+        //
+        // for(var i = 0; i <lengthEl; i++){
+        //     var array = [];
+        //     array.push(lowercaseEl);
+        //     array.push(uppercaseEl);
+        //     array.push(symbolsEl);
+        //     array.push(numbersEl);
+        //     console.log(array);
+        // };
     }else if(uppercaseEl.checked && symbolsEl.checked && numbersEl.checked === true ){
         console.log("has3")
     }else if(uppercaseEl.checked && numbersEl.checked && lowercaseEl.checked === true ){
@@ -55,8 +77,12 @@ generateEl.addEventListener('click', () => {
         console.log("has1")
     }else if(symbolsEl.checked === true ){
         console.log("has1")
+    }else{
+        console.log("needs a value");
+        alert("please select a input");
+        //event.preventDefault();
     }
-
+    //for loop to take user input loop through "i" as long as length and push the final password into a array
     // const length = lengthEl.value;
     // const hasLower = lowercaseEl.checked;
     // const hasUpper = uppercaseEl.checked;
