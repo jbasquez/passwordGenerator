@@ -58,9 +58,11 @@ generateEl.addEventListener('click', () => {
         settings = upperLetter.concat(specCharacter, alpha);
         console.log(settings);
     }else if(symbolsEl.checked && numbersEl.checked && lowercaseEl.checked === true ){
-        console.log("has3")
+        settings = specCharacter.concat(numbers, alpha);
+        console.log(settings);
     }else if(uppercaseEl.checked && symbolsEl.checked === true ){
-        console.log("has2")
+        settings = upperLetter.concat(specCharacter);
+        console.log(settings);
     }else if(uppercaseEl.checked && numbersEl.checked=== true ){
         console.log("has2")
     }else if(uppercaseEl.checked && lowercaseEl.checked === true ){
