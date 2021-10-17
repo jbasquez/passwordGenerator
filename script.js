@@ -40,8 +40,8 @@ function generatePassword(lower, upper, number, symbol, length) {
     //filters out unchecked items from array for passsword
    const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0])
     
-   if(typesCount === 0) {
-       return '';
+   if(typesCount >= 0) {
+       alert("please enter a length");
    }
    //uses given length to loop through checked items already filterd combines diff items to make array
    for(let i = 0; i < length; i++){
