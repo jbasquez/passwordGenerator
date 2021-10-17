@@ -17,9 +17,6 @@ const randomFunc = {
 generateEl.addEventListener('click', () => {
     // length value grabbed from html converted from string to number w/ +
     const length = +lengthEl.value;
-    // console.log(length);
-    // console.log("ive been clicked");
-    //
     var settings;
 
     specCharacter = [
@@ -38,52 +35,35 @@ generateEl.addEventListener('click', () => {
     upperLetter = alpha.map(toUpper);
 
     if(lowercaseEl.checked && uppercaseEl.checked && symbolsEl.checked&& numbersEl.checked === true) {
-        // console.log("has all");
         settings = specCharacter.concat(numbers, alpha, upperLetter);
-        // console.log(settings[0]);
-        // console.log(settings[1]);
     }else if(uppercaseEl.checked && symbolsEl.checked && numbersEl.checked === true ){
         settings = specCharacter.concat(numbers,upperLetter);
-        // console.log(settings);
     }else if(uppercaseEl.checked && numbersEl.checked && lowercaseEl.checked === true ){
         settings = alpha.concat(numbers, upperLetter);
-        // console.log(settings);
     }else if(uppercaseEl.checked && symbolsEl.checked && lowercaseEl.checked === true ){
         settings = upperLetter.concat(specCharacter, alpha);
-        // console.log(settings);
     }else if(symbolsEl.checked && numbersEl.checked && lowercaseEl.checked === true ){
         settings = specCharacter.concat(numbers, alpha);
-        // console.log(settings);
     }else if(uppercaseEl.checked && symbolsEl.checked === true ){
         settings = upperLetter.concat(specCharacter);
-        // console.log(settings);
     }else if(uppercaseEl.checked && numbersEl.checked=== true ){
         settings = upperLetter.concat(numbers);
-        // console.log(settings);
     }else if(uppercaseEl.checked && lowercaseEl.checked === true ){
         settings = upperLetter.concat(alpha);
-        // console.log(settings);
     }else if(lowercaseEl.checked && symbolsEl.checked === true ){
         settings = alpha.concat(specCharacter);
-        // console.log(settings);
     }else if(lowercaseEl.checked && numbersEl.checked=== true ){
         settings = alpha.concat(numbers);
-        // console.log(settings);
     }else if(numbersEl.checked && symbolsEl.checked=== true ){
         settings = numbers.concat(specCharacter);
-        // console.log(settings);
     }else if(lowercaseEl.checked === true ){
         settings = alpha;
-        // console.log(settings);
     }else if(uppercaseEl.checked === true ){
         settings = upperLetter;
-        // console.log(settings);
     }else if(numbersEl.checked === true ){
         settings = numbers;
-        // console.log(settings);
     }else if(symbolsEl.checked === true ){
         settings = specCharacter;
-        // console.log(settings);
     }else{
         // console.log("needs a value");
         alert("please select a input");
