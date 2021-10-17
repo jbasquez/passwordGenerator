@@ -17,66 +17,11 @@ const randomFunc = {
 generateEl.addEventListener('click', () => {
     // length value grabbed from html converted from string to number w/ +
     const length = +lengthEl.value;
-    var settings;
-
-    specCharacter = [
-        "!", "@", "#", "$", "%", "^", "&", "*", "'", "(", ")", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "[", "\\", "]", "_",  "`",  "{", "|", "}",  "~",
-      ];
-    numbers = [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 0
-    ];
-    alpha = [
-        "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
-      ];
-    
-    var toUpper = function(x){
-        return x.toUpperCase();
-    }
-    upperLetter = alpha.map(toUpper);
-
-    if(lowercaseEl.checked && uppercaseEl.checked && symbolsEl.checked&& numbersEl.checked === true) {
-        settings = specCharacter.concat(numbers, alpha, upperLetter);
-    }else if(uppercaseEl.checked && symbolsEl.checked && numbersEl.checked === true ){
-        settings = specCharacter.concat(numbers,upperLetter);
-    }else if(uppercaseEl.checked && numbersEl.checked && lowercaseEl.checked === true ){
-        settings = alpha.concat(numbers, upperLetter);
-    }else if(uppercaseEl.checked && symbolsEl.checked && lowercaseEl.checked === true ){
-        settings = upperLetter.concat(specCharacter, alpha);
-    }else if(symbolsEl.checked && numbersEl.checked && lowercaseEl.checked === true ){
-        settings = specCharacter.concat(numbers, alpha);
-    }else if(uppercaseEl.checked && symbolsEl.checked === true ){
-        settings = upperLetter.concat(specCharacter);
-    }else if(uppercaseEl.checked && numbersEl.checked=== true ){
-        settings = upperLetter.concat(numbers);
-    }else if(uppercaseEl.checked && lowercaseEl.checked === true ){
-        settings = upperLetter.concat(alpha);
-    }else if(lowercaseEl.checked && symbolsEl.checked === true ){
-        settings = alpha.concat(specCharacter);
-    }else if(lowercaseEl.checked && numbersEl.checked=== true ){
-        settings = alpha.concat(numbers);
-    }else if(numbersEl.checked && symbolsEl.checked=== true ){
-        settings = numbers.concat(specCharacter);
-    }else if(lowercaseEl.checked === true ){
-        settings = alpha;
-    }else if(uppercaseEl.checked === true ){
-        settings = upperLetter;
-    }else if(numbersEl.checked === true ){
-        settings = numbers;
-    }else if(symbolsEl.checked === true ){
-        settings = specCharacter;
-    }else{
-        // console.log("needs a value");
-        alert("please select a input");
-        //event.preventDefault();
-    }
-    // console.log(pass);
-    //for loop to take user input loop through "i" as long as length and push the final password into a array
-    // const length = lengthEl.value;
+    //sees if this is true or false
     const hasLower = lowercaseEl.checked;
     const hasUpper = uppercaseEl.checked;
     const hasNumber = numbersEl.checked;
     const hasSymbol = symbolsEl.checked;
-    // console.log(hasLower,hasUpper,hasNumber,hasSymbol, length)
     
     resultEl.innerText = generatePassword(
         hasLower,
@@ -92,32 +37,25 @@ function generatePassword(lower, upper, number, symbol, length) {
    let generatedPassword = '';
     
     const typesCount = lower + upper + number + symbol;
-     console.log('typesCount:', typesCount);
-    
+    //filters out unchecked items from array for passsword
    const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0])
-   console.log(typesArr);
     
    if(typesCount === 0) {
        return '';
    }
+   //uses given length to loop through checked items already filterd combines diff items to make array
    for(let i = 0; i < length; i++){
        typesArr.forEach(type =>{
            const pushedItem = Object.keys(type)[0];
-           console.log(pushedItem);
            generatedPassword += randomFunc[pushedItem]();
        })
-    // var pass;
-    // pass += settings[i];
-
-    //  console.log(pass); 
-    // console.log("helooooo");
     };
   
     const finalPassword = generatedPassword.slice(0, length);
    return finalPassword;
 };
 
-
+//uses charcode to generate random items
 function getRandomUpper() {
     return String.fromCharCode(Math.floor(Math.random()*26)+65);
 }
@@ -131,4 +69,3 @@ function getRandomSymbols() {
     const symbols = '!@#$%^&*{}[]></.,';
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
-console.log(getRandomSymbols());
